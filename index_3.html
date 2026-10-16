@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Study Planner</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+
+    <!-- Header -->
+    <header class="hero">
+      <h1>📚 Study Planner</h1>
+      <p>Plan • Study • Track • Achieve</p>
+    </header>
+
+    <!-- Stats -->
+    <section class="stats">
+      <div class="stat-card total">
+        <span class="stat-number" id="totalCount">0</span>
+        <span class="stat-label">Total</span>
+      </div>
+      <div class="stat-card completed">
+        <span class="stat-number" id="completedCount">0</span>
+        <span class="stat-label">Completed</span>
+      </div>
+      <div class="stat-card pending">
+        <span class="stat-number" id="pendingCount">0</span>
+        <span class="stat-label">Pending</span>
+      </div>
+    </section>
+
+    <!-- Progress -->
+    <section class="card progress-card">
+      <h2>📊 Overall Progress</h2>
+      <div class="progress-track">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+      <p class="progress-text">
+        <strong id="progressPercent">0%</strong>
+        <span id="progressDetail">0 completed / 0 total</span>
+      </p>
+    </section>
+
+    <!-- Add task -->
+    <section class="card form-card">
+      <h2>➕ Add Study Task</h2>
+      <form id="taskForm">
+        <div class="form-grid">
+          <label>Subject
+            <input type="text" id="subject" placeholder="e.g. Data Structures" required>
+          </label>
+          <label>Topic
+            <input type="text" id="topic" placeholder="e.g. Linked List" required>
+          </label>
+          <label>Priority
+            <select id="priority">
+              <option value="High">🔴 High</option>
+              <option value="Medium" selected>🟡 Medium</option>
+              <option value="Low">🟢 Low</option>
+            </select>
+          </label>
+          <label>Deadline
+            <input type="date" id="deadline" required>
+          </label>
+        </div>
+        <button type="submit" class="btn-add">Add Task</button>
+      </form>
+    </section>
+
+    <!-- Task list -->
+    <section class="card list-card">
+      <div class="list-header">
+        <h2>📋 My Tasks</h2>
+        <div class="filters">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="pending">Pending</button>
+          <button class="filter-btn" data-filter="completed">Completed</button>
+        </div>
+      </div>
+      <ul id="taskList" class="task-list"></ul>
+      <p id="emptyState" class="empty-state">🌈 No tasks here yet. Add your first study topic!</p>
+    </section>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
